@@ -22,6 +22,9 @@ public class Trailer {
     @JoinColumn(name = "employee_id")
     private Employee employee;
 
+    @Column(name = "identifier")
+    private String identifier = "T"; // Wartość "T" jako identyfikator
+
     public Trailer(String registration, LocalDate review, Employee employee) {
         this.registration = registration;
         this.review = review;
@@ -29,7 +32,6 @@ public class Trailer {
     }
 
     public Trailer() {
-
     }
 
     public Long getId() {
@@ -62,5 +64,9 @@ public class Trailer {
 
     public void setEmployee(Employee employee) {
         this.employee = employee;
+    }
+
+    public String getIdentifier() {
+        return identifier;
     }
 }

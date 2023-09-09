@@ -245,24 +245,44 @@ public class ManagerService {
         visitserviceRepository.deleteById(id);
     }
 
-//    @PostConstruct
-//    public void initializeSampleData() {
+    @PostConstruct
+    public void initializeSampleData() {
 //        Employee employee1 = new Employee("John", "Doe", "john@example.com", "123456789");
+//        Employee employee2 = new Employee("John", "Doe", "john@example.com", "123456789");
+//        Employee employee3 = new Employee("John", "Doe", "john@example.com", "123456789");
 //        createEmployee(employee1);
+//        createEmployee(employee2);
+//        createEmployee(employee3);
 //
 //        Trailer trailer1 = new Trailer("ABC123", LocalDate.now(), employee1);
+//        Trailer trailer2 = new Trailer("Kot", LocalDate.now(), employee2);
+//        Trailer trailer3 = new Trailer("plot", LocalDate.now(), employee3);
 //        createTrailer(trailer1);
+//        createTrailer(trailer2);
+//        createTrailer(trailer3);
+//
 //
 //        Truck truck1 = new Truck("XYZ789", LocalDate.now(), employee1);
+//        Truck truck2 = new Truck("mrowka", LocalDate.now(), employee2);
+//        Truck truck3 = new Truck("zab", LocalDate.now(), employee3);
 //        createTruck(truck1);
+//        createTruck(truck2);
+//        createTruck(truck3);
 //
 //        LocalDate startDate = LocalDate.of(2023, 8, 1);
 //        LocalDate endDate = LocalDate.of(2023, 8, 15);
 //        Vacation vacation1 = new Vacation(startDate, endDate, employee1);
 //        createVacation(vacation1);
 //
-//        VisitService visitService1 = new VisitService(startDate, endDate, "Service description", trailer1, truck1);
+//        VisitService visitService1 = new VisitService(startDate, endDate, "Service description", trailer1, null);
+//        VisitService visitService2 = new VisitService(startDate, endDate, "ababab", trailer1, null);
+//        VisitService visitService3 = new VisitService(startDate, endDate, "cdcdcd", null, truck2);
+//        VisitService visitService4 = new VisitService(startDate, endDate, "cdcd", trailer3, null);
 //        createVisitService(visitService1);
-//    }
+//        createVisitService(visitService2);
+//        createVisitService(visitService3);
+//        createVisitService(visitService4);
+
+    }
 
 }

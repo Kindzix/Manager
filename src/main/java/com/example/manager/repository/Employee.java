@@ -26,6 +26,7 @@ public class Employee {
     @Column(name = "phone_number")
     private String phoneNumber;
 
+
     @OneToOne(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonIgnore
     private Trailer trailer;
