@@ -2,6 +2,7 @@ package com.example.manager.repository;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Optional;
 
 @Entity
 @Table(name = "trucks")
@@ -15,8 +16,11 @@ public class Truck {
     @Column(name = "registration")
     private String registration;
 
-    @Column(name = "review")
-    private LocalDate review;
+    @Column(name = "date_review")
+    private LocalDate dateReview;
+
+    @Column(name = "next_review_date")
+    private LocalDate nextReviewDate; // Nowe pole terminu przeglądu
 
     @OneToOne
     @JoinColumn(name = "employee_id")
@@ -25,9 +29,10 @@ public class Truck {
     public Truck() {
     }
 
-    public Truck(String registration, LocalDate review, Employee employee) {
+    public Truck(String registration, LocalDate dateReview, LocalDate nextReviewDate, Employee employee) {
         this.registration = registration;
-        this.review = review;
+        this.dateReview = dateReview;
+        this.nextReviewDate = nextReviewDate;
         this.employee = employee;
     }
 
@@ -47,12 +52,20 @@ public class Truck {
         this.registration = registration;
     }
 
-    public LocalDate getReview() {
-        return review;
+    public LocalDate getDateReview() {
+        return dateReview;
     }
 
-    public void setReview(LocalDate review) {
-        this.review = review;
+    public void setDateReview(LocalDate dateReview) {
+        this.dateReview = dateReview;
+    }
+
+    public LocalDate getNextReviewDate() {
+        return nextReviewDate;
+    }
+
+    public void setNextReviewDate(LocalDate nextReviewDate) {
+        this.nextReviewDate = nextReviewDate;
     }
 
     public Employee getEmployee() {

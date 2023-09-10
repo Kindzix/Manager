@@ -15,8 +15,11 @@ public class Trailer {
     @Column(name = "registration")
     private String registration;
 
-    @Column(name = "review")
-    private LocalDate review;
+    @Column(name = "date_review")
+    private LocalDate dateReview;
+
+    @Column(name = "next_review_date")
+    private LocalDate nextReviewDate; // Nowe pole terminu przeglądu
 
     @OneToOne
     @JoinColumn(name = "employee_id")
@@ -25,9 +28,10 @@ public class Trailer {
     @Column(name = "identifier")
     private String identifier = "T"; // Wartość "T" jako identyfikator
 
-    public Trailer(String registration, LocalDate review, Employee employee) {
+    public Trailer(String registration, LocalDate dateReview, LocalDate nextReviewDate, Employee employee) {
         this.registration = registration;
-        this.review = review;
+        this.dateReview = dateReview;
+        this.nextReviewDate = nextReviewDate;
         this.employee = employee;
     }
 
@@ -50,12 +54,20 @@ public class Trailer {
         this.registration = registration;
     }
 
-    public LocalDate getReview() {
-        return review;
+    public LocalDate getDateReview() {
+        return dateReview;
     }
 
-    public void setReview(LocalDate review) {
-        this.review = review;
+    public void setDateReview(LocalDate dateReview) {
+        this.dateReview = dateReview;
+    }
+
+    public LocalDate getNextReviewDate() {
+        return nextReviewDate;
+    }
+
+    public void setNextReviewDate(LocalDate nextReviewDate) {
+        this.nextReviewDate = nextReviewDate;
     }
 
     public Employee getEmployee() {
